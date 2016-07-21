@@ -5,12 +5,23 @@ gem "pg"
 
 gem "puma", "~> 3.0"
 
-
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
 gem "jquery-rails"
 gem "slim"
+
+group :test do
+  gem "capybara"
+  gem "codeclimate-test-reporter", require: false
+  gem "database_cleaner"
+  gem "email_spec"
+  gem "formulaic"
+  gem "launchy"
+  gem "rspec-its"
+  gem "shoulda-matchers"
+  gem "webmock", require: false
+end
 
 group :development, :test do
   gem "byebug", platform: :mri
@@ -24,6 +35,8 @@ group :development, :test do
   gem "scss_lint", require: false
   gem "slim_lint", require: false
   gem "coffeelint"
+  gem "brakeman", require: false
+  gem "bundler-audit", require: false
 end
 
 group :development do
@@ -32,5 +45,5 @@ group :development do
   gem "listen", "~> 3.0.5"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "spring-commands-rspec"
 end
-
