@@ -13,6 +13,16 @@ gem "jquery-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "faker"
+  gem "jasmine", "> 2.0"
+  gem "jasmine-jquery-rails"
+  gem "pry-rails"
+  gem "rspec-rails", "~> 3.4"
+  gem "rubocop", require: false
+  gem "rubocop-rspec", require: false
+  gem "scss_lint", require: false
+  gem "slim_lint", require: false
+  gem "coffeelint"
 end
 
 group :development do
