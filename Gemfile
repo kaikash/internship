@@ -4,11 +4,19 @@ gem "rails", "~> 5.0.0"
 gem "pg"
 
 gem "puma", "~> 3.0"
+gem "dotenv-rails"
+gem "devise"
+gem "gleborator"
+# gem "draper"
+gem "activemodel-serializers-xml", github: "rails/activemodel-serializers-xml"
 
+# Front
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
 gem "jquery-rails"
+gem "foundation-icons-sass-rails"
+gem "foundation-rails"
 gem "slim"
 
 group :test do
@@ -46,4 +54,5 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "spring-commands-rspec"
+  gem "letter_opener"
 end
