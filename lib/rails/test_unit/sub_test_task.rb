@@ -1,2 +1,4 @@
-class Rails::SubTestTask < Rake::TestTask
+module Rails
+  class SubTestTask < Rake::TestTask
+  end
 end

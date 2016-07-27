@@ -8,7 +8,7 @@ gem "dotenv-rails"
 gem "devise"
 gem "gleborator"
 # gem "draper"
-gem "activemodel-serializers-xml", github: "rails/activemodel-serializers-xml"
+# gem "activemodel-serializers-xml", github: "rails/activemodel-serializers-xml"
 
 # Front
 gem "sass-rails", "~> 5.0"
@@ -38,6 +38,7 @@ group :development, :test do
   gem "jasmine-jquery-rails"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.4"
+  gem "factory_girl_rails"
   gem "rubocop", require: false
   gem "rubocop-rspec", require: false
   gem "scss_lint", require: false
