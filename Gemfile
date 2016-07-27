@@ -11,13 +11,18 @@ gem "gleborator"
 # gem "activemodel-serializers-xml", github: "rails/activemodel-serializers-xml"
 
 # Front
-gem "sass-rails", "~> 5.0"
+gem "sass-rails", "~> 5.0.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
 gem "jquery-rails"
 gem "foundation-icons-sass-rails"
 gem "foundation-rails"
+gem "autoprefixer-rails"
 gem "slim"
+gem "skim"
+gem "active_link_to"
+gem "metamagic"
+gem "simple_form"
 
 group :test do
   gem "capybara"
