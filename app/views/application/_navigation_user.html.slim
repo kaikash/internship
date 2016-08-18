@@ -1,7 +1,8 @@
 ul.right
   - if user_signed_in?
+    = active_link_to "New post", new_post_path, active: :exclusive, wrap_tag: :li
     li.has-dropdown
-      a.user-dropdown(href="#") = current_user.full_name_with_email
+      a.user-dropdown(href="/users/#{current_user.username}") = current_user.full_name_with_username
       ul.dropdown
         li
           = link_to "Edit profile", edit_user_registration_path

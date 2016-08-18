@@ -13,7 +13,7 @@ module Authentication
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i(name surname email password password_confirmation))
-    devise_parameter_sanitizer.permit(:account_update, keys: %i(name surname email password password_confirmation))
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i(name surname username email password password_confirmation))
+    devise_parameter_sanitizer.permit(:account_update, keys: %i(name surname username email password password_confirmation))
   end
 end

@@ -1,0 +1,9 @@
+.row
+  .columns
+    h2 = title("Posts")
+
+/ = raise posts.inspect
+- posts.each do |post|
+  .row
+    .columns.medium-6
+      = active_link_to post.intro, post_path(post)

@@ -1,0 +1,10 @@
+.row
+  .medium-6.columns
+    = simple_form_for post do |f|
+
+      .form-inputs
+        = f.input :title, required: true
+      .form-inputs
+        = f.input :content, required: true
+      .form-actions
+        = f.button :submit

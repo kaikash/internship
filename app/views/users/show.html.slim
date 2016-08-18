@@ -1,0 +1,11 @@
+.row
+  .columns
+    h2 = title("#{user.full_name} profile")
+
+.row
+  .columns
+    | email: #{user.email}
+  .columns
+    | total posts: #{user.posts_count}
+  .columns
+    = active_link_to "Posts", user_posts_path(user_username: user.username)

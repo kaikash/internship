@@ -1,0 +1,42 @@
+.row
+  .columns
+    h2 = title("Show post")
+
+.row
+  .medium-6.columns
+    .title = post.title
+    .content = post.content
+    cite.author = active_link_to post.author_full_name, user_path(username: post.author_username)
+- if policy(post).manage?
+  .row
+    .columns
+      = active_link_to "Edit", edit_post_path(post)
+    .columns
+      = link_to 'Destroy',  { action: :destroy, id: post.id }, method: :delete, data: { confirm: 'Are you sure?' }
+
+.row
+  .columns
+    h4 Post a comment
+.row
+  .medium-6.columns
+    = simple_form_for(comment, data: {  }) do |f|
+      .form-inputs
+        = f.input :content, label: "Comment"
+
+      .form-actions
+        = f.button :submit
+
+.row
+  .columns
+    h4 = "Comments (#{post.comments_count})"
+
+- comments.each do |comment|
+  .row
+    = link_to comment.commenter_full_name, user_path(username: comment.commenter_username)
+  .row
+    = comment.content
+  .row
+    = comment.time_created_in_words
+  hr
+
+
