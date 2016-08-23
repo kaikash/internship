@@ -7,7 +7,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [600, nil]
 
   version :thumb do
-    process resize_to_fill: [100, nil]
+    process resize_to_fit: [100, nil]
   end
 
   def store_dir
