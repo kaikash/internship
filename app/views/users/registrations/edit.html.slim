@@ -1,6 +1,6 @@
 .row
   .columns
-    h2 = title("Edit #{current_user.full_name}")
+    h2 = title("Edit #{current_user.full_name} profile")
 
 .row
   .medium-6.columns
@@ -10,6 +10,7 @@
         html: { method: :put } do |f|
 
       .form-inputs
+        = f.file_field :avatar
         = f.input :name, required: true, autofocus: true
         = f.input :surname, required: true
         = f.input :username, required: true

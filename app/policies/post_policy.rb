@@ -19,7 +19,7 @@ class PostPolicy < ApplicationPolicy
     manage?
   end
 
-  def destoy?
+  def destroy?
     manage?
   end
 end

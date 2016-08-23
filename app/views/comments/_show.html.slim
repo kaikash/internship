@@ -1,0 +1,28 @@
+= content_tag :div, data: { "fragment-id" => "discussion" } do
+  - if policy(comment).create?
+    .row
+      .columns
+        h4 Post a comment
+    .row
+      .medium-6.columns
+        = simple_form_for(comment, url: post_comments_path(comment.post, comment), data: { behavior: "fragments" }) do |f|
+          .form-inputs
+            = f.input :content, label: "Comment"
+          .form-actions
+            = f.button :submit
+
+  .row
+    .columns
+      h4 = "Comments"
+
+  - comments.each do |comment|
+    .row
+      = link_to comment.commenter_full_name, user_path(username: comment.commenter_username)
+    .row
+      = comment.content
+    .row
+      = comment.time_created_in_words
+    - if policy(comment).manage?
+      .row
+        = link_to "Delete comment", [post, comment], method: :delete, data: { confirm: 'Are you sure?' }
+    hr

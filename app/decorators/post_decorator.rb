@@ -1,5 +1,5 @@
 class PostDecorator < ApplicationDecorator
-  delegate :id, :title, :content
+  delegate :id, :title, :content, :errors
   delegate :name, :full_name, :username, to: :author, prefix: true
 
   def intro

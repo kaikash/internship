@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   resources :posts do
-    member do
-      resources :comments, only: [:create, :destroy]
-    end
+    resources :comments, only: [:create, :destroy]
   end
 
   resources :users, only: [:show], param: :username do

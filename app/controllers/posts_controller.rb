@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :edit, :update]
   expose_decorated(:posts) { paginated_posts }
   expose_decorated(:post)
 
   expose_decorated(:comments, from: :post)
-  expose_decorated(:comment) { Comment.new(post: post) }
+  expose(:comment) { Comment.new(post: post) }
   
   def index
   end
@@ -16,7 +17,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    post.user = current_user
     authorize post
     if post.save
       redirect_to post, notice: "Post was created"
@@ -44,14 +44,10 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content).merge(user: current_user)
   end
 
   def paginated_posts
     Post.includes(comments: :user).order(created_at: :desc).page(params[:page])
-  end
-
-  def authorize_user!
-    authorize(post, :manage?)
   end
 end

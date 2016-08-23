@@ -1,5 +1,5 @@
 class CommentDecorator < ApplicationDecorator
-  delegate :id, :content
+  delegate :id, :content, :errors
   delegate :name, :full_name, :username, to: :commenter, prefix: true
 
   def time_created_in_words

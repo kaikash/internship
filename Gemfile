@@ -12,6 +12,8 @@ gem "decent_decoration", github: "fs/decent_decoration", branch: "decent-exposur
 gem "decent_exposure"
 gem "activemodel-serializers-xml", github: "rails/activemodel-serializers-xml"
 gem "pundit"
+gem "carrierwave"
+gem "mini_magick"
 
 # Front
 gem "sass-rails", "~> 5.0.0"

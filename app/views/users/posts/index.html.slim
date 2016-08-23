@@ -2,8 +2,6 @@
   .columns
     h2 = title("#{user.full_name}'s posts")
   .columns = active_link_to "#{user.full_name} profile", user_path(username: user.username)
-
-/ = raise posts.inspect
 .row
   .columns
     h5 Posts
